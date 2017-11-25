@@ -10,7 +10,7 @@ namespace WebServer.Controllers
     public class RCModelController : ApiController
     {
         // GET: api/RCModel
-        public IEnumerable<RCModel> Get()
+        public IEnumerable<RCModel> Get(int projId)
         {
             return null;
         }
@@ -18,6 +18,14 @@ namespace WebServer.Controllers
         // POST: api/RCModel
         public void Post([FromBody]RCModel value)
         {
+            var myProject = WebApiApplication.Projects[value.ProjectId];
+            value.Id = myProject.UsedRCModel.Count;
+            value.DateTime = DateTime.Now;
+            if (value.PhotoSceneId == null)
+            {
+                value.PhotoSceneId = "前端没有PhotoSceneId";
+            }
+
         }
 
     }

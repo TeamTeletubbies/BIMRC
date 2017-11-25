@@ -13,6 +13,12 @@ namespace WebServer.Controllers
         // POST: api/BIMModel
         public void Post([FromBody]BIMModel value)
         {
+            if (WebApiApplication.Projects[value.ProjectId].BIMModel == null)
+            {
+                WebApiApplication.Projects[value.ProjectId].BIMModel = value;
+            }
+            if (value.SVFUrn == null) value.SVFUrn = "前端没有SVFUrn";
+            if (value.SourceName == null) value.SourceName = "前端没有SourceName";
         }
 
     }

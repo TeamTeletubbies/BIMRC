@@ -12,12 +12,26 @@ namespace WebServer.Controllers
         // GET: api/Project
         public IEnumerable<Project> Get()
         {
-            return null;
+            var result = WebApiApplication.Projects;
+            foreach (var a in result)
+                foreach (var b in a.UsedRCModel)
+                {
+                    b.ExistId = null;
+                }
+            return result;
         }
+
 
         // POST: api/Project
         public void Post([FromBody]Project value)
         {
+            value.Id = WebApiApplication.Projects.Count;
+            if (value.UserId == null) value.UserId = "前端没有Userid";
+            if (value.ProjName == null) value.ProjName = "前端没有projname";
+            if (value.BucketName == null) value.BucketName = "前端没有BucketName";
+            WebApiApplication.Projects.Add(value);
         }
+
+
     }
 }

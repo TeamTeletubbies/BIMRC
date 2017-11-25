@@ -14,5 +14,10 @@ namespace WebServer.Controllers
 
             return View();
         }
+         string GetString()
+
+     {        return "come and fuck me!!oh~~"; 
+            
+      }
     }
 }

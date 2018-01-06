@@ -11,6 +11,10 @@ namespace WebServer.Models
         public int ProjectId;
         // 转换后的SVF文件Urn，前端来
         public string SVFUrn;
+        public string SVFUrn64;
+        public string FBXUrn;
+        public string FBXUrn64;
+
         // 上传的FBX文件的名称，从前端来
         public string SourceName;
         //--------------------------------------------

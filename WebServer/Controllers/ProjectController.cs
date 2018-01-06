@@ -26,10 +26,11 @@ namespace WebServer.Controllers
         public void Post([FromBody]Project value)
         {
             value.Id = WebApiApplication.Projects.Count;
-            if (value.UserId == null) value.UserId = "前端没有Userid";
-            if (value.ProjName == null) value.ProjName = "前端没有projname";
-            if (value.BucketName == null) value.BucketName = "前端没有BucketName";
             WebApiApplication.Projects.Add(value);
+            value.CreateTime = DateTime.Now;
+            //if (value.UserId == null) value.UserId = "前端没有Userid";
+            //if (value.ProjName == null) value.ProjName = "前端没有projname";
+            //if (value.BucketName == null) value.BucketName = "前端没有BucketName";
         }
 
 

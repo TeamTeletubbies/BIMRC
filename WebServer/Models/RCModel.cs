@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace WebServer.Models
 {
     /// <summary>
@@ -52,6 +53,8 @@ namespace WebServer.Models
             比对完成
         }
 
+        
+         
 
         /*
          * Task json
@@ -64,8 +67,6 @@ namespace WebServer.Models
          * }
          * 
          * [123123,123123,123123,123123,123123]
-         * 
-         * 
          * 
          * 
          * 

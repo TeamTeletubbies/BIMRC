@@ -22,5 +22,9 @@ namespace WebServer.Models
         public List<RCModel> UsedRCModel = new List<RCModel>();
         //OSS里的BucketName，前端来
         public string BucketName;
+        //创建时间
+        public DateTime CreateTime;
+        // 用户名
+        public string UserName;
     }
 }

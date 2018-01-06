@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebServer.Models;
+using RestSharp;
 namespace WebServer.Controllers
 {
     public class RCModelController : ApiController
@@ -21,10 +22,7 @@ namespace WebServer.Controllers
             var myProject = WebApiApplication.Projects[value.ProjectId];
             value.Id = myProject.UsedRCModel.Count;
             value.DateTime = DateTime.Now;
-            if (value.PhotoSceneId == null)
-            {
-                value.PhotoSceneId = "前端没有PhotoSceneId";
-            }
+            if (value.PhotoSceneId == null)value.PhotoSceneId = "前端没有PhotoSceneId";
 
         }
 
